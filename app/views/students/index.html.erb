@@ -1,0 +1,85 @@
+
+<div class="container mx-auto mt-28 px-5 flex">
+
+<table class="min-w-full leading-normal mb-10">
+                        <thead>
+                            <tr>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    ID
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    name
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    level
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Blogs
+                                </th>
+                                                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    B-Count
+                                </th>
+                                <th
+                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                      <% @students.each do |student| %>
+                      <tr>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                  
+                                  <%= student.id %>
+                                  </p>
+                      </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                  
+                                  <%= student.name %>
+                                  </p>
+                      </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                  <%= student.level %>
+                                  
+                                  </p>
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm flex flex-col gap-1">
+                                <% student.blogs.each do |blog| %>
+                                <p class="text-indigo-900 whitespace-no-wrap">
+                                   🌹 <%= blog.title %>
+                                </p>
+                                <% end %>
+                        </td>
+
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="font-mono font-bold text-center py-2 ml-10 w-10 border border-gray-600 rounded-md text-gray-900 whitespace-no-wrap">
+                                  <%= student.blogs.count %>
+                                  
+                                  </p>
+                        </td>
+                        
+
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <div class="flex flex-row gap-3">
+                                  <%= link_to "View" , students_show_path(student.id), class:"px-2 py-1 rounded-md bg-indigo-200 text-indigo-700 hover:opacity-80"%>
+                                  
+                                  </div>
+                      </td>
+                      </tr>
+                      <% end %>
+                        </tbody>
+
+<table>
+
+</div>

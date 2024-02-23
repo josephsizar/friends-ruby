@@ -1,0 +1,22 @@
+<div class="w-full h-screen flex flex-col justify-center items-center">
+
+    <div class="relative w-full h-screen flex flex-col justify-center items-center ">
+        
+  <%= link_to "<-- Home",root_path,class:"absolute top-4 rounded-full text-white left-[50%] px-2 py-1 bg-indigo-500 animate-pulse hover:opacity-50"%>
+  <%= link_to "Next -->",articles_show_path(@article.id + 1),class:"absolute right-[26.6%] rounded-tl-full rounded-bl-full text-white  px-2 py-1 bg-indigo-500  hover:opacity-50"%>
+      <div class="bg-indigo-50 flex flex-col justify-center items-center pt-7 gap-[100px]">
+
+          <h1 class="text-5xl text-indigo-700 font-mono font-bold w-[700px] break-words"><%= @article.id%> - <%= @article.title%></h1>
+
+          <h2 class="text-3xl text-slate-600">Content:</h2>
+
+          <p class="text-md text-indigo-700 text-mono"> <%= @article.context %> </p>
+
+          <div class="border-t border-t-indigo-900 text-white px-4 py-2 rounded-sm w-[700px] bg-indigo-400"> <%= @article.created_at.strftime("%d - %b - %Y") %> |
+           <%= time_ago_in_words(@article.created_at) %> </div>
+
+      </div>
+
+</div>
+
+</div>
